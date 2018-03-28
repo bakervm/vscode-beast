@@ -1,0 +1,116 @@
+{
+  "scopeName": "source.beast",
+  "name": "Beast",
+  "fileTypes": [
+    "beast"
+  ],
+  "foldingStartMarker": "(",
+  "foldingStopMarker": ")",
+  "patterns": [
+    {
+      "match": ";;[^\\n]*",
+      "name": "comment.line.beast"
+    },
+    {
+      "name": "comment.block.semicolon.beast",
+      "begin": "\\(;",
+      "end": ";\\)",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.comment.begin.beast"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.comment.end.beast"
+        }
+      }
+    },
+    {
+      "match": "\\b(while|if|else|export|import|from|as|in)\\b",
+      "name": "keyword.control.beast"
+    },
+    {
+      "name": "string.quoted.double.beast",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.beast"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.beast"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\\\\n",
+          "name": "constant.character.escape.newline.beast"
+        },
+        {
+          "match": "\\\\t",
+          "name": "constant.character.escape.tab.beast"
+        },
+        {
+          "match": "\\\\{2}",
+          "name": "constant.character.escape.backslash.beast"
+        },
+        {
+          "match": "\\\\'",
+          "name": "constant.character.escape.quote.single.beast"
+        },
+        {
+          "match": "\\\\\"",
+          "name": "constant.character.escape.quote.double.beast"
+        },
+        {
+          "match": "\\\\[0-9A-Fa-f]{2}|\\\\u({)[A-Fa-f0-9]+(})",
+          "name": "constant.character.escape.hex.unicode.beast",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.unicode-escape.begin.bracket.curly.beast"
+            },
+            "2": {
+              "name": "punctuation.definition.unicode-escape.end.bracket.curly.beast"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "match": "\\b(const|func|u8|u16|i8|i16)\\b",
+      "name": "storage.type.beast"
+    },
+    {
+      "match": "\\b(add|sub|mul|div|shl|shr|and|or|xor|not|neg|inc|dec|u8_promote|u16_demote|i8_promote|i16_demote|reg|load|store|push|dup|drop|sys|alloc|free|call|ret)\\b",
+      "name": "support.function.beast"
+    },
+    {
+      "name": "variable.other.name.beast",
+      "match": "(\\$)[\\w]+\\b",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.variable.beast"
+        }
+      }
+    },
+    {
+      "match": "(:)[\\w]+\\b",
+      "name": "constant.other.symbol.beast"
+    },
+    {
+      "match": "(%)[\\w]+\\b",
+      "name": "constant.other.beast"
+    },
+    {
+      "name": "constant.numeric.int.hex.beast",
+      "match": "(?<!\\w)[-+]?0x[A-Fa-f0-9]+"
+    },
+    {
+      "name": "constant.numeric.int.decimal.beast",
+      "match": "(?<!\\w)[-+]?\\d+"
+    }
+  ]
+}

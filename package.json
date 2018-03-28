@@ -1,0 +1,26 @@
+{
+    "name": "beast",
+    "displayName": "Beast",
+    "description": "Syntax support for the beast assembly language",
+    "version": "0.0.1",
+    "publisher": "BakerVM",
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "beast",
+            "aliases": ["Beast", "beast"],
+            "extensions": [".beast"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "beast",
+            "scopeName": "source.beast",
+            "path": "./syntaxes/beast.tmLanguage.json"
+        }]
+    }
+}
